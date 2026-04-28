@@ -1,21 +1,51 @@
 import { useEffect } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
   const location = useLocation()
 
   useEffect(() => {
     const threshold = 48
-    function syncHeaderTop() {
-      const y = window.scrollY || document.documentElement.scrollTop
-      document.body.classList.toggle('header-at-top', y <= threshold)
+    const minDelta = 8
+    const revealTop = 80
+    let lastScrollTop = window.pageYOffset || 0
+
+    function syncHeaderState() {
+      const current = window.pageYOffset || document.documentElement.scrollTop || 0
+      const slideNav = document.getElementById('slide-nav')
+      const menuOpen = Boolean(slideNav && slideNav.classList.contains('show'))
+
+      document.body.classList.toggle('header-at-top', current <= threshold)
+
+      if (menuOpen || current <= revealTop) {
+        document.body.classList.add('header-visible')
+        document.body.classList.remove('header-hidden')
+        lastScrollTop = current
+        return
+      }
+
+      const delta = current - lastScrollTop
+      if (Math.abs(delta) < minDelta) return
+
+      if (delta > 0) {
+        document.body.classList.add('header-hidden')
+        document.body.classList.remove('header-visible')
+      } else {
+        document.body.classList.add('header-visible')
+        document.body.classList.remove('header-hidden')
+      }
+
+      lastScrollTop = current
     }
-    syncHeaderTop()
-    window.addEventListener('scroll', syncHeaderTop, { passive: true })
-    window.addEventListener('resize', syncHeaderTop)
+
+    document.body.classList.add('header-visible')
+    document.body.classList.remove('header-hidden')
+    syncHeaderState()
+    window.addEventListener('scroll', syncHeaderState, { passive: true })
+    window.addEventListener('resize', syncHeaderState)
     return () => {
-      window.removeEventListener('scroll', syncHeaderTop)
-      window.removeEventListener('resize', syncHeaderTop)
+      window.removeEventListener('scroll', syncHeaderState)
+      window.removeEventListener('resize', syncHeaderState)
     }
   }, [])
 

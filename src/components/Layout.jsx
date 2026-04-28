@@ -19,7 +19,7 @@ export default function Layout() {
   }, [pathname])
 
   return (
-    <div className="fixed-header header-at-top">
+    <div className="fixed-header">
       <Preloader />
       <ScrollProgress />
       <Header />

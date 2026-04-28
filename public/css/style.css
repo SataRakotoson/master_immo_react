@@ -421,15 +421,20 @@ header .account-dropdown .header-dropdown[open] .header-dropdown-menu {
     animation: headerDropdownIn 0.22s ease both;
 }
 
-/* Fixed header: hide on scroll down, show on scroll up */
-body.fixed-header > header {
+/* Fixed header: hide on scroll down, show on scroll up
+   - legacy HTML: body > header
+   - React app: body > #root > .fixed-header > header */
+body.fixed-header > header,
+body.fixed-header .fixed-header > header {
     transition: transform 0.28s ease;
     will-change: transform;
 }
-body.fixed-header.header-hidden > header {
+body.fixed-header.header-hidden > header,
+body.fixed-header.header-hidden .fixed-header > header {
     transform: translateY(-110%);
 }
-body.fixed-header.header-visible > header {
+body.fixed-header.header-visible > header,
+body.fixed-header.header-visible .fixed-header > header {
     transform: translateY(0);
 }
 
