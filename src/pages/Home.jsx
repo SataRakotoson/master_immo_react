@@ -209,14 +209,17 @@ export default function Home() {
           </div>
           <div className="row">
             {[
-              { img: 'portrait4.webp', zone: 'Ambatobe', title: 'Le Paradis vert', effect: 'fadeInUp' },
-              { img: 'portrait2.webp', zone: 'Ambohidratrimo', title: 'Résidence Belle Vue', effect: 'fadeInUp' },
-              { img: 'portrait3.webp', zone: 'Betsizaraina', title: 'Résidence Betsizara', effect: 'fadeInUp' },
+              { img: 'portrait4.webp', zone: 'Ambatobe', title: 'Le Paradis vert', effect: 'fadeInUp', soldOut: false, availabilityLabel: '9 lots disponibles' },
+              { img: 'portrait2.webp', zone: 'Ambohidratrimo', title: 'Résidence Belle Vue', effect: 'fadeInUp', soldOut: true },
+              { img: 'portrait3.webp', zone: 'Betsizaraina', title: 'Résidence Betsizara', effect: 'fadeInUp', soldOut: true },
             ].map((item, i) => (
               <div key={i} className="col-md-4 animate-box" data-animate-effect={item.effect}>
                 <div className="item">
                   <div className="position-re o-hidden"><img src={`/img/import/${item.img}`} alt="" /></div>
-                  <span className="category"><Link to="/terrains">Sold out</Link></span>
+                  {item.soldOut
+                    ? <span className="category"><Link to="/terrains">Sold out</Link></span>
+                    : <span className="category category--available">{item.availabilityLabel}</span>
+                  }
                   <div className="con">
                     <h6><a href="#">{item.zone}</a></h6>
                     <h5><a href="#">{item.title}</a></h5>
@@ -239,13 +242,16 @@ export default function Home() {
               </div>
             ))}
             {[
-              { img: 'paysage1.webp', zone: 'Ivandry', title: "Résidence Les Jardins d'Émeraude", col: 'col-md-6', effect: 'fadeInLeft' },
-              { img: 'paysage2.webp', zone: 'Alasora', title: 'Terrain Alasora', col: 'col-md-6', effect: 'fadeInRight' },
+              { img: 'paysage1.webp', zone: 'Ivandry', title: "Résidence Les Jardins d'Émeraude", col: 'col-md-6', effect: 'fadeInLeft', soldOut: true },
+              { img: 'paysage2.webp', zone: 'Alasora', title: 'Terrain Alasora', col: 'col-md-6', effect: 'fadeInRight', soldOut: false, availabilityLabel: '5 lots disponibles' },
             ].map((item, i) => (
               <div key={i} className={`${item.col} animate-box`} data-animate-effect={item.effect}>
                 <div className="item">
                   <div className="position-re o-hidden"><img src={`/img/import/${item.img}`} alt="" /></div>
-                  <span className="category"><Link to="/terrains">Sold out</Link></span>
+                  {item.soldOut
+                    ? <span className="category"><Link to="/terrains">Sold out</Link></span>
+                    : <span className="category category--available">{item.availabilityLabel}</span>
+                  }
                   <div className="con">
                     <h6><a href="#">{item.zone}</a></h6>
                     <h5><a href="#">{item.title}</a></h5>

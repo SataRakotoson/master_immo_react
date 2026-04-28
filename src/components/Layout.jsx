@@ -5,6 +5,7 @@ import Footer from './Footer'
 import Preloader from './Preloader'
 import ScrollProgress from './ScrollProgress'
 import WhatsAppFloat from './WhatsAppFloat'
+import VisitPopup from './VisitPopup'
 import { usePageScripts } from '../hooks/usePageScripts'
 
 export default function Layout() {
@@ -26,6 +27,7 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
+      <VisitPopup />
       <WhatsAppFloat />
       <Footer />
     </div>
