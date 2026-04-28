@@ -1,0 +1,75 @@
+/* Espace client specific tweaks */
+
+.supplier-list-card__status {
+    color: #415a24;
+    background: #edf4e3;
+    border-color: #d7e6c0;
+}
+
+.supplier-list-card__status--validation {
+    color: #ffffff;
+    background: #f39c12;
+    border-color: #f39c12;
+}
+
+.supplier-list-card__status--payment {
+    color: #ffffff;
+    background: #1e88e5;
+    border-color: #1e88e5;
+}
+
+.supplier-list-card__status--complete {
+    color: #ffffff;
+    background: #30a122;
+    border-color: #30a122;
+}
+
+.supplier-topbar__kicker {
+    letter-spacing: 0.05em;
+}
+
+.client-user-menu {
+    position: relative;
+}
+
+.client-user-menu__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 170px;
+    background: #fff;
+    border: 1px solid #e7dfd2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.client-user-menu.is-open .client-user-menu__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.client-user-menu__dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2f2b24;
+    text-decoration: none;
+    padding: 0.45rem 0.55rem;
+    border-radius: 8px;
+}
+
+.client-user-menu__dropdown a:hover {
+    background: rgba(170, 132, 83, 0.16);
+}
+
+.supplier-land-panel .supplier-search {
+    margin-bottom: 0.95rem;
+}

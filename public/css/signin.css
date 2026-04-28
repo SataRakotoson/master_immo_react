@@ -1,0 +1,256 @@
+/* ======= Page Connexion Master Immo — carte unique (image + formulaire) ======= */
+
+.page-signin {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Barlow', sans-serif;
+    color: #333;
+    background: #faf8f5;
+}
+
+.page-signin a {
+    color: #aa8453;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.signin-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.signin-panel {
+    width: 100%;
+    max-width: 920px;
+}
+
+/* Carte unique : image | formulaire */
+.signin-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 56px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(170, 132, 83, 0.14);
+}
+
+@media (min-width: 992px) {
+    .signin-card {
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 520px;
+    }
+}
+
+/* Colonne image (gauche sur desktop) */
+.signin-card__media {
+    position: relative;
+    flex: 0 0 auto;
+    min-height: 240px;
+    background: #2a2419 center / cover no-repeat;
+    background-image: linear-gradient(115deg, rgba(42, 36, 25, 0.88) 0%, rgba(42, 36, 25, 0.7) 100%, rgba(170, 132, 83, 0.25) 100%),
+        url('../img/import/hero3.webp');
+}
+
+@media (min-width: 992px) {
+    .signin-card__media {
+        flex: 0 0 44%;
+        max-width: 420px;
+        min-height: auto;
+    }
+}
+
+.signin-card__back {
+    position: absolute;
+    top: clamp(1rem, 3vw, 1.35rem);
+    left: clamp(1rem, 3vw, 1.35rem);
+    z-index: 2;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.signin-card__back:hover {
+    color: #fff;
+}
+
+.signin-card__back span {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.signin-card__media-copy {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    min-height: 240px;
+    padding: clamp(3.25rem, 8vw, 4rem) clamp(1.5rem, 4vw, 2.25rem) clamp(1.5rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .signin-card__media-copy {
+        min-height: 100%;
+        justify-content: center;
+        padding: 2.5rem 2rem;
+    }
+}
+
+.signin-card__tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #e8d4b8;
+    margin: 0 0 0.65rem;
+}
+
+.signin-card__media-title {
+    font-family: 'Gilda Display', serif;
+    color: #fff;
+    font-size: clamp(1.45rem, 3.5vw, 2rem);
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 0.85rem;
+    max-width: 18ch;
+}
+
+.signin-card__media-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    max-width: 30ch;
+}
+
+/* Colonne formulaire */
+.signin-card__body {
+    flex: 1;
+    min-width: 0;
+    padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signin-card__logo {
+    display: block;
+    margin: 0 auto 1.35rem;
+    width: 112px;
+    height: auto;
+}
+
+.signin-card__logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.signin-card__heading {
+    font-family: 'Gilda Display', serif;
+    font-size: clamp(1.45rem, 3vw, 1.75rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 0.35rem;
+}
+
+.signin-card__sub {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+}
+
+.signin-field {
+    margin-bottom: 1rem;
+}
+
+.signin-field label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 0.4rem;
+}
+
+.signin-field input[type='email'],
+.signin-field input[type='password'] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e0dcd4;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.signin-field input:focus {
+    outline: none;
+    border-color: #aa8453;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(170, 132, 83, 0.12);
+}
+
+.signin-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+}
+
+.signin-check {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.signin-check input {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #aa8453;
+}
+
+/* Pleine largeur du bouton .butn-dark dans le formulaire (style global dans style.css) */
+.signin-card .butn-dark {
+    width: 100%;
+}
+
+.signin-card .butn-dark button {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.signin-card__foot {
+    text-align: center;
+    margin-top: 1.35rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+}
+

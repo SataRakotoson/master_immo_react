@@ -1,0 +1,83 @@
+/* ======= Page FAQ (faq.html) — thème terrains, accordéon ======= */
+
+.lands-faq-section {
+    background: linear-gradient(180deg, #faf8f5 0%, #f3efe8 55%, #f8f5f0 100%);
+    padding-top: clamp(3rem, 7vw, 4.75rem);
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+    overflow: visible;
+}
+.lands-faq-intro-wrap {
+    margin-bottom: 2.25rem;
+}
+.lands-faq-intro {
+    font-size: clamp(15px, 1.9vw, 17px);
+    line-height: 1.7;
+    color: #5c5c5c;
+    max-width: 38rem;
+    margin: 0 auto;
+}
+.lands-faq-intro a {
+    color: #aa8453;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.lands-faq-intro a:hover {
+    color: #8a6d44;
+}
+.lands-faq-accordion.accordion-box .block {
+    border-radius: 8px;
+    border: 1px solid rgba(170, 132, 83, 0.28);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.05);
+    margin-bottom: 14px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+    background: #fff;
+    overflow: visible;
+}
+.lands-faq-accordion.accordion-box .block:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.08);
+    border-color: rgba(170, 132, 83, 0.45);
+}
+.lands-faq-accordion.accordion-box .block.active-block {
+    overflow: hidden;
+    border-color: #aa8453;
+    box-shadow: 0 14px 44px rgba(170, 132, 83, 0.14);
+}
+.lands-faq-accordion.accordion-box .block .acc-btn {
+    padding-left: 22px;
+    padding-right: 56px;
+    border-left: 3px solid transparent;
+    font-size: clamp(17px, 2.2vw, 20px);
+    line-height: 1.35;
+}
+.lands-faq-accordion.accordion-box .block .acc-btn.active {
+    border-left-color: #aa8453;
+    background: linear-gradient(90deg, rgba(170, 132, 83, 0.07) 0%, #fff 18%);
+    color: #aa8453;
+}
+.lands-faq-accordion.accordion-box .block .acc-btn.active:before {
+    color: #aa8453;
+}
+.lands-faq-accordion.accordion-box .block .content {
+    background: linear-gradient(180deg, #fdfcfa 0%, #fff 100%);
+    border-top: 1px solid rgba(170, 132, 83, 0.12);
+    padding-top: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 26px;
+}
+@media (min-width: 768px) {
+    .lands-faq-accordion.accordion-box .block .content {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .lands-faq-accordion.accordion-box .block .acc-btn {
+        padding-left: 24px;
+        padding-right: 60px;
+    }
+}
+.lands-faq-accordion.accordion-box .block .content .text {
+    font-size: 15px;
+    line-height: 1.78;
+    color: #555;
+    max-width: 52rem;
+}

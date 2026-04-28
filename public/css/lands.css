@@ -1,0 +1,581 @@
+/* ======= Page Terrains (lands.html) ======= */
+
+/* Fiche terrain : graisses plus douces (strong, petits titres) */
+.page-land-detail .rooms-page strong {
+    font-weight: 500;
+}
+.page-land-detail .rooms-page h6 {
+    font-weight: 400;
+}
+/* Fiche terrain (land.html) : texte sur le slider plein écran */
+.land-detail-hero {
+    position: relative;
+}
+/* AOS (fade-up) : éviter que overflow du header coupe l’animation */
+.page-land-detail .land-detail-hero.header {
+    overflow: visible;
+}
+.land-detail-hero .land-detail-banner-overlay {
+    pointer-events: none;
+    z-index: 7;
+    text-align: center;
+}
+.land-detail-hero .land-detail-banner-overlay .container {
+    pointer-events: auto;
+}
+.land-detail-hero .land-detail-banner-title {
+    text-transform: none;
+    letter-spacing: 0.03em;
+    font-size: clamp(1.35rem, 3.8vw, 2.15rem);
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.page-land-detail .land-detail-hero .land-detail-banner-title {
+    font-weight: 300;
+}
+.land-detail-hero .land-detail-banner-lead {
+    font-size: clamp(15px, 1.85vw, 17px);
+    line-height: 1.7;
+    max-width: 38rem;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.banner-header.banner-header--tall {
+    height: 86vh;
+    min-height: 420px;
+}
+
+/* Boutons sous le texte d’intro (bannière terrains) */
+.banner-header--tall .lands-banner-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: clamp(22px, 4vw, 34px);
+}
+
+.banner-header.banner-header--tall .banner-slogan {
+    max-width: 46rem;
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.65;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.92);
+}
+@media screen and (max-width: 767px) {
+    .banner-header.banner-header--tall .banner-slogan {
+        font-size: 14px;
+        max-width: none;
+    }
+}
+
+/* Formulaire de recherche qui remonte sous la bannière */
+.lands-booking-overlap {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(-2.5rem, -6vw, -4.5rem);
+    margin-bottom: 0;
+}
+/* Pas d’icône calendrier sur le champ zone (texte) */
+.lands-booking-overlap .input1_inner--no-icon:after,
+.booking-box .input1_inner--no-icon:after {
+    display: none;
+}
+
+.lands-booking-overlap .booking-inner {
+    background-color: #f8f5f0;
+    border: 1px solid rgba(170, 132, 83, 0.28);
+    border-radius: 6px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+    padding: 12px 8px;
+}
+
+/* Annule les margin-bottom globales (.form1 .c*, .select2, .booking-box …) */
+.lands-booking-overlap .form1 .c1,
+.lands-booking-overlap .form1 .c2,
+.lands-booking-overlap .form1 .c3,
+.lands-booking-overlap .form1 .c4,
+.lands-booking-overlap .form1 .c5 {
+    margin-bottom: 0;
+}
+.lands-booking-overlap .form1 .input1_wrapper,
+.lands-booking-overlap .form1 .select1_wrapper {
+    margin-bottom: 0;
+}
+.lands-booking-overlap .form1 .select2,
+.lands-booking-overlap .form1 select.select2,
+.lands-booking-overlap .select2-container {
+    margin-bottom: 0;
+}
+.lands-booking-overlap .form1 .input1_inner input.form-control {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* Colonnes étroites (14 %) : le texte des Select2 ne doit pas passer sur 2 lignes (sinon dépasse les 62px) */
+.lands-booking-overlap .form1 .c1,
+.lands-booking-overlap .form1 .c2,
+.lands-booking-overlap .form1 .c3,
+.lands-booking-overlap .form1 .c4,
+.lands-booking-overlap .form1 .c5 {
+    overflow: hidden;
+}
+.lands-booking-overlap .select2-container--default .select2-selection--single {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+.lands-booking-overlap .select2-container--default .select2-selection--single .select2-selection__rendered {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 400;
+}
+
+.lands-booking-overlap .select2-dropdown .select2-results__option,
+.lands-booking-overlap .select2-container--default .select2-results__option[aria-selected="true"],
+.lands-booking-overlap .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    font-weight: 400;
+}
+
+.booking-box .form1 .input1_wrapper,
+.booking-box .form1 .select1_wrapper {
+    margin-bottom: 0;
+}
+.booking-box .form1 .select2,
+.booking-box .form1 select.select2,
+.booking-box .select2-container {
+    margin-bottom: 0;
+}
+.booking-box .form1 .input1_inner input.form-control {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.booking-box .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-weight: 400;
+}
+.booking-box .select2-dropdown .select2-results__option,
+.booking-box .select2-container--default .select2-results__option[aria-selected="true"],
+.booking-box .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+    .lands-booking-overlap {
+        margin-top: -1.75rem;
+    }
+    .lands-booking-overlap .booking-inner {
+        padding: 10px 6px;
+    }
+}
+
+/* Liste terrains : un peu plus d’air entre chaque annonce */
+.section-padding .col-md-12 > .rooms2.mb-90 {
+    margin-bottom: 140px !important;
+}
+
+/* Listings type rooms2 : cadre uniquement sur le bloc texte */
+.section-padding .rooms2 .caption {
+    border: 1px solid rgba(170, 132, 83, 0.28);
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.06);
+}
+.section-padding .rooms2 .caption .info-wrapper {
+    justify-content: flex-end;
+}
+
+/* AOS sur .caption : garder la photo derrière + bloc texte toujours opaque (pas de fondu AOS sur le fade) */
+/* Ratio 16:10 = 1920×1200 : toutes les figures des annonces terrains */
+.section-padding .rooms2 figure {
+    z-index: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+/* Images directes dans figure (Ivato, Andravoahangy, lotissement…) : recadrage centré */
+.section-padding .rooms2 figure > img.img-fluid {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.section-padding .rooms2 .caption[data-aos] {
+    z-index: 2;
+    opacity: 1;
+}
+.section-padding .rooms2[data-aos] {
+    overflow: visible;
+}
+
+/* 6 critères : 3 à gauche, 3 à droite (deux listes) */
+.section-padding .rooms2 .lands-facilities-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(16px, 4vw, 32px);
+    row-gap: 0;
+}
+.section-padding .rooms2 .lands-facilities-wrap .lands-facilities-col {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.section-padding .rooms2 .lands-facilities-wrap .lands-facilities-col li {
+    color: #666;
+    font-size: 15px;
+    padding-bottom: 6px;
+    margin: 0;
+}
+.section-padding .rooms2 .lands-facilities-wrap .lands-facilities-col li i {
+    margin-right: 10px;
+    color: #aa8453;
+    font-size: 20px;
+}
+@media (max-width: 575.98px) {
+    .section-padding .rooms2 .lands-facilities-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Carte sous Caractéristiques (colonne latérale land.html) */
+.rooms-page .land-sidebar-map {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(170, 132, 83, 0.28);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+}
+.rooms-page .land-sidebar-map iframe {
+    display: block;
+    width: 100%;
+    vertical-align: top;
+}
+.rooms-page .land-map-heading {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Fiche terrain (land.html) : mêmes critères que lands, une seule colonne */
+.rooms-page .lands-facilities-wrap--stack {
+    display: block;
+}
+.rooms-page .lands-facilities-wrap--stack .lands-facilities-col {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.rooms-page .lands-facilities-wrap--stack .lands-facilities-col li {
+    color: #666;
+    font-size: 15px;
+    padding-bottom: 6px;
+    margin: 0;
+}
+.rooms-page .lands-facilities-wrap--stack .lands-facilities-col li i {
+    margin-right: 10px;
+    color: #aa8453;
+    font-size: 20px;
+}
+@media (max-width: 991.98px) {
+    .section-padding .rooms2 .caption {
+        margin-top: 16px;
+    }
+}
+
+/* Bouton « Voir la localisation » : même principe que .butn-light (bannière), lisible sur fond clair */
+.section-padding .rooms2 .caption .butn-light {
+    display: inline-block;
+    line-height: 1.2em;
+}
+.section-padding .rooms2 .caption .butn-light button {
+    font-weight: 400;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    background: transparent;
+    color: #222;
+    padding: 12px 20px;
+    margin: 0;
+    position: relative;
+    font-size: 15px;
+    letter-spacing: 3px;
+    border: 1px solid rgba(34, 34, 34, 0.35);
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-padding .rooms2 .caption .butn-light button:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background: #ab8a62;
+}
+.section-padding .rooms2 .caption .butn-light button i {
+    position: relative;
+    z-index: 2;
+    font-size: 17px;
+    color: #ab8a62;
+    line-height: 1;
+}
+.section-padding .rooms2 .caption .butn-light button span {
+    position: relative;
+    z-index: 2;
+}
+.section-padding .rooms2 .caption .butn-light button:hover:after {
+    width: 100%;
+    left: 0;
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+}
+.section-padding .rooms2 .caption .butn-light button:hover span,
+.section-padding .rooms2 .caption .butn-light button:hover i {
+    color: #fff;
+}
+
+/* ======= Slide photo / carte (annonce Ambatobe) ======= */
+/* Le ratio est désormais porté par le figure parent ; on laisse le composant remplir ce cadre */
+.lands-listing-media {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+/* Rail : les deux panneaux côte à côte, largeur totale = 2× le conteneur */
+.lands-listing-media__track {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Chaque panneau occupe 50 % du track = 100 % du conteneur visible */
+.lands-listing-media__panel {
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.lands-listing-media__photo,
+.lands-listing-media__panel > img.img-fluid {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.lands-listing-media__panel--map iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+/* État actif → glisser le track d'un panneau vers la gauche */
+.lands-listing-media.is-map-active .lands-listing-media__track {
+    transform: translateX(-50%);
+}
+
+/* Accessibilité : désactiver l'animation pour les utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+    .lands-listing-media__track {
+        transition: none;
+    }
+}
+
+/* Popup reservation visite */
+body.lands-popup-open {
+    overflow: hidden;
+}
+.lands-visit-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.lands-visit-popup.is-opening {
+    animation: landsPopupFadeIn 0.42s ease both;
+}
+.lands-visit-popup.is-hidden {
+    display: none;
+}
+.lands-visit-popup__panel {
+    position: relative;
+    width: min(860px, 100%);
+    background: #fff;
+    border-radius: 26px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.lands-visit-popup.is-opening .lands-visit-popup__panel {
+    animation: landsPopupPanelIn 0.48s cubic-bezier(0.22, 0.8, 0.24, 1) both;
+}
+.lands-visit-popup__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #111;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+.lands-visit-popup__media {
+    position: relative;
+    min-height: 380px;
+}
+.lands-visit-popup__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(42, 36, 25, 0.84) 0%, rgba(42, 36, 25, 0.62) 62%, rgba(170, 132, 83, 0.34) 100%);
+    pointer-events: none;
+}
+.lands-visit-popup__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.lands-visit-popup__media-copy {
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: #fff;
+}
+.lands-visit-popup__media-kicker {
+    margin: 0 0 0.35rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+.lands-visit-popup__media-text {
+    margin: 0;
+    font-family: 'Gilda Display', serif;
+    font-size: 1.04rem;
+    line-height: 1.38;
+    color: #fff;
+}
+.lands-visit-popup__form-wrap {
+    padding: 2.15rem 2rem 1.8rem;
+}
+.lands-visit-popup__title {
+    margin: 0 0 1.2rem;
+    text-align: center;
+    font-family: 'Gilda Display', serif;
+    font-size: 1.55rem;
+    color: #1a1a1a;
+}
+.lands-visit-popup__form .register-field {
+    margin-bottom: 0.9rem;
+}
+.lands-visit-popup__form .register-grid {
+    gap: 0.9rem;
+}
+.lands-visit-popup__form .register-grid .register-field {
+    margin-bottom: 0;
+}
+.lands-visit-popup__form .register-field label {
+    margin-bottom: 0.3rem;
+}
+.lands-visit-popup__form .register-field input[type='tel'] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e0dcd4;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.lands-visit-popup__form .register-field input[type='tel']:focus {
+    outline: none;
+    border-color: #aa8453;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(170, 132, 83, 0.12);
+}
+.lands-visit-popup__submit {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 0.6rem !important;
+}
+@media (max-width: 767px) {
+    .lands-visit-popup__panel {
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+    }
+    .lands-visit-popup__media {
+        min-height: 160px;
+        border-right: 0;
+        border-bottom: 2px solid #1d1d1d;
+    }
+    .lands-visit-popup__form-wrap {
+        padding: 1.2rem 1rem 1rem;
+    }
+    .lands-visit-popup__title {
+        font-size: 1.45rem;
+    }
+}
+
+@keyframes landsPopupFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes landsPopupPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(64px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

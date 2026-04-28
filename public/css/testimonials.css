@@ -1,0 +1,190 @@
+/* ======= Testimonials page ======= */
+
+.testimonials-cards {
+    background: #f3f3f3;
+}
+
+.testimonials-cards__layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    gap: clamp(1rem, 2vw, 2.5rem);
+    align-items: start;
+}
+
+.testimonials-cards__intro {
+    top: 120px;
+    padding-right: 1rem;
+}
+
+.testimonials-cards__intro h2 {
+    font-family: "Gilda Display", serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+    line-height: 1.12;
+    margin: 0 0 0.75rem;
+    color: #1c1c1c;
+}
+
+.testimonials-cards__intro p {
+    margin: 0;
+    color: #4f4f4f;
+    line-height: 1.7;
+    max-width: 32ch;
+}
+
+.testimonials-cards__viewport-wrap {
+    min-width: 0;
+}
+
+.testimonials-cards__viewport {
+    overflow: hidden;
+}
+
+.testimonials-cards__track {
+    display: flex;
+    gap: 1.25rem;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonial-card {
+    flex: 0 0 calc((100% - 1.25rem) / 2);
+    min-height: 280px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+}
+
+.testimonial-card::after {
+    content: "\201D";
+    position: absolute;
+    top: 0.8rem;
+    right: 0.95rem;
+    font-family: "Gilda Display", serif;
+    font-size: 8rem;
+    line-height: 1;
+    color: #aa8453;
+    opacity: 0.34;
+    transform: scale(1);
+    transform-origin: center;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    pointer-events: none;
+}
+
+.testimonial-card__head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-card__avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-card__identity {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-card__quote {
+    font-family: 'Gilda Display', serif;
+    margin: 0;
+    color: #2f2f2f;
+    line-height: 1.65;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.testimonial-card__name {
+    margin: 0;
+    font-family: "Gilda Display", serif;
+    font-size: 1.15rem;
+    color: #171717;
+    line-height: 1;
+}
+
+.testimonial-card__meta {
+    display: block;
+    color: #000;
+    font-size: 0.86rem;
+    margin-bottom: 0;
+}
+
+.testimonials-cards__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.testimonials-cards__controls .about-journey__arrow {
+    position: static;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+    border-radius: 50%;
+    background: #fff;
+    color: #1d1d1d;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1;
+}
+
+.testimonials-cards__controls .about-journey__arrow:hover:not(:disabled) {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+.testimonials-cards__controls .about-journey__arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.testimonials-cards__controls .about-journey__arrow--prev,
+.testimonials-cards__controls .about-journey__arrow--next {
+    left: auto;
+}
+@media (max-width: 1199px) {
+    .testimonials-cards__layout {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .testimonial-card {
+        flex-basis: calc((100% - 1.25rem) / 2);
+    }
+}
+
+@media (max-width: 991px) {
+    .testimonials-cards__layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testimonials-cards__intro {
+        position: static;
+        padding-right: 0;
+    }
+
+    .testimonials-cards__intro p {
+        max-width: 60ch;
+    }
+}
+
+@media (max-width: 767px) {
+    .testimonial-card {
+        flex-basis: 100%;
+        min-height: 250px;
+    }
+}

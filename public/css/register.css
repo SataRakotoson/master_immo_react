@@ -1,0 +1,236 @@
+﻿/* ======= Page Inscription Master Immo ======= */
+
+.page-register {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Barlow', sans-serif;
+    color: #333;
+    background: #faf8f5;
+}
+
+.page-register a {
+    color: #aa8453;
+    text-decoration: none;
+}
+
+.register-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.register-panel {
+    width: 100%;
+    max-width: 920px;
+}
+
+.register-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 56px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(170, 132, 83, 0.14);
+}
+
+@media (min-width: 992px) {
+    .register-card {
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 520px;
+    }
+}
+
+.register-card__media {
+    position: relative;
+    min-height: 240px;
+    background: #2a2419 center / cover no-repeat;
+    background-image: linear-gradient(115deg, rgba(42, 36, 25, 0.88) 0%, rgba(42, 36, 25, 0.65) 60%, rgba(170, 132, 83, 0.2) 100%),
+        url('../img/import/hero2.webp');
+}
+
+@media (min-width: 992px) {
+    .register-card__media {
+        flex: 0 0 44%;
+        max-width: 420px;
+        min-height: auto;
+    }
+}
+
+.register-card__back {
+    position: absolute;
+    top: clamp(1rem, 3vw, 1.35rem);
+    left: clamp(1rem, 3vw, 1.35rem);
+    z-index: 2;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.register-card__back:hover,
+.register-card__back:focus-visible {
+    color: #fff;
+}
+
+.register-card__media-copy {
+    min-height: 240px;
+    height: 100%;
+    padding: clamp(3.25rem, 8vw, 4rem) clamp(1.5rem, 4vw, 2.25rem) clamp(1.5rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .register-card__media-copy {
+        justify-content: center;
+        padding: 2.5rem 2rem;
+    }
+}
+
+.register-card__tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #e8d4b8;
+    margin: 0 0 0.65rem;
+}
+
+.register-card__media-title {
+    font-family: 'Gilda Display', serif;
+    color: #fff;
+    font-size: clamp(1.45rem, 3.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 0.85rem;
+    max-width: 18ch;
+}
+
+.register-card__media-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    max-width: 30ch;
+}
+
+.register-card__body {
+    flex: 1;
+    min-width: 0;
+    padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-card__logo {
+    display: block;
+    margin: 0 auto 1.35rem;
+    width: 112px;
+}
+
+.register-card__logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.register-card__heading {
+    font-family: 'Gilda Display', serif;
+    font-size: clamp(1.45rem, 3vw, 1.75rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 0.35rem;
+}
+
+.register-card__sub {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+}
+
+.register-grid {
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .register-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.register-field {
+    margin-bottom: 0.8rem;
+}
+
+.register-grid .register-field {
+    margin-bottom: 0;
+}
+
+.register-field label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 0.4rem;
+}
+
+.register-field input[type='text'],
+.register-field input[type='email'],
+.register-field input[type='password'] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e0dcd4;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.register-field input:focus {
+    outline: none;
+    border-color: #aa8453;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(170, 132, 83, 0.12);
+}
+
+.register-card .register-butn-dark {
+    width: 100%;
+    margin-top: 0.4rem;
+}
+
+.register-card .register-butn-dark button {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.register-card__foot {
+    text-align: center;
+    margin-top: 1.35rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+}
