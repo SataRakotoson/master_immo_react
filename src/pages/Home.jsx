@@ -274,6 +274,12 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="d-flex justify-content-center">
+            <button className="button-main">
+              <a href="#" className="button-1" data-scroll-nav="1">Voir plus<i></i></a>
+            </button>
+          </div>
+     
         </div>
       </section>
 

@@ -26,6 +26,12 @@ export default function App() {
         <Route path="/inscription" element={<Register />} />
         <Route path="/mot-de-passe-oublie" element={<ForgotPassword />} />
 
+        {/* Pages de gestion sans header/footer public */}
+        <Route path="/espace-client" element={<EspaceClientDashboard />} />
+        <Route path="/espace-client/mes-terrains" element={<MesTerrains />} />
+        <Route path="/espace-fournisseur" element={<EspaceFournisseurDashboard />} />
+        <Route path="/espace-fournisseur/depot-terrain" element={<DepotTerrain />} />
+
         {/* Pages avec layout (header + footer) */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -37,10 +43,6 @@ export default function App() {
           <Route path="/evenements" element={<Event />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/temoignages" element={<Testimonials />} />
-          <Route path="/espace-client" element={<EspaceClientDashboard />} />
-          <Route path="/espace-client/mes-terrains" element={<MesTerrains />} />
-          <Route path="/espace-fournisseur" element={<EspaceFournisseurDashboard />} />
-          <Route path="/espace-fournisseur/depot-terrain" element={<DepotTerrain />} />
         </Route>
       </Routes>
     </BrowserRouter>
