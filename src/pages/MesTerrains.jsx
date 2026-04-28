@@ -1,38 +1,5 @@
-import { Link, useLocation } from 'react-router-dom'
-
-function ClientSidebar() {
-  const { pathname } = useLocation()
-  const links = [
-    { to: '/espace-client', icon: 'ti-layout-grid2', label: 'Tableau de bord' },
-    { to: '/espace-client/mes-terrains', icon: 'ti-map-alt', label: 'Mes terrains' },
-    { to: '#', icon: 'ti-receipt', label: 'Factures' },
-    { to: '#', icon: 'ti-wallet', label: 'Reçus de paiement' },
-    { to: '#', icon: 'ti-calendar', label: 'Mensualités' },
-    { to: '#', icon: 'ti-clipboard', label: 'Suivi de dossier' },
-    { to: '#', icon: 'ti-pulse', label: "Simulation d'achat" },
-  ]
-  return (
-    <aside className="supplier-sidebar">
-      <div className="supplier-logo">
-        <span className="supplier-logo__mark" aria-hidden="true">
-          <img src="/img/import/logo-color.png" alt="" />
-        </span>
-        <div>
-          <h2>Master Immo</h2>
-          <p>Espace Client</p>
-        </div>
-      </div>
-      <nav className="supplier-nav" aria-label="Menu client">
-        {links.map((l, i) => (
-          <Link key={i} className={`supplier-nav__item${pathname === l.to ? ' is-active' : ''}`} to={l.to}>
-            <i className={l.icon}></i><span>{l.label}</span>
-          </Link>
-        ))}
-      </nav>
-      <Link className="supplier-logout" to="/connexion"><i className="ti-power-off"></i><span>Déconnexion</span></Link>
-    </aside>
-  )
-}
+import HeaderDashboard from '../components/HeaderDashboard'
+import SidebarDashboard from '../components/SidebarDashboard'
 
 export default function MesTerrains() {
   const terrains = [
@@ -43,14 +10,9 @@ export default function MesTerrains() {
 
   return (
     <div className="supplier-layout">
-      <ClientSidebar />
+      <SidebarDashboard />
       <section className="supplier-main">
-        <header className="supplier-topbar">
-          <div>
-            <p className="supplier-topbar__kicker">Portail client</p>
-            <h1 className="supplier-topbar__title">Mes terrains</h1>
-          </div>
-        </header>
+        <HeaderDashboard />
         <main className="supplier-content" aria-label="Contenu mes terrains client">
           <div className="supplier-land-panel">
             <section className="supplier-section-head">

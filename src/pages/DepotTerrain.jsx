@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import HeaderDashboard from '../components/HeaderDashboard'
 
 function FournisseurSidebar() {
   const { pathname } = useLocation()
@@ -44,12 +45,7 @@ export default function DepotTerrain() {
     <div className="supplier-layout">
       <FournisseurSidebar />
       <section className="supplier-main">
-        <header className="supplier-topbar">
-          <div>
-            <p className="supplier-topbar__kicker">Espace fournisseur</p>
-            <h1 className="supplier-topbar__title">Dépôt de terrain</h1>
-          </div>
-        </header>
+        <HeaderDashboard />
         <main className="supplier-content" aria-label="Contenu dépôt terrain">
           <div className="supplier-land-panel">
             <section className="supplier-section-head">

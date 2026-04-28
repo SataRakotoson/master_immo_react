@@ -81,6 +81,8 @@ master-immo-react/
 | `espace-fournisseur/index.html` | `/espace-fournisseur`           |
 | `espace-fournisseur/depot-terrain.html` | `/espace-fournisseur/depot-terrain` |
 
+Les pages `/espace-client` et `/espace-client/mes-terrains` partagent désormais la même sidebar via le composant `src/components/SidebarDashboard.jsx` pour garantir une navigation cohérente et réutilisable.
+
 ## Stack technique
 
 - **React 19** avec Vite 8

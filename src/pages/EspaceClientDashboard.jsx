@@ -1,59 +1,13 @@
-import { Link, useLocation } from 'react-router-dom'
-
-function ClientSidebar() {
-  const { pathname } = useLocation()
-  const links = [
-    { to: '/espace-client', icon: 'ti-layout-grid2', label: 'Tableau de bord' },
-    { to: '/espace-client/mes-terrains', icon: 'ti-map-alt', label: 'Mes terrains' },
-    { to: '#', icon: 'ti-receipt', label: 'Factures' },
-    { to: '#', icon: 'ti-wallet', label: 'Reçus de paiement' },
-    { to: '#', icon: 'ti-calendar', label: 'Mensualités' },
-    { to: '#', icon: 'ti-clipboard', label: 'Suivi de dossier' },
-    { to: '#', icon: 'ti-pulse', label: "Simulation d'achat" },
-  ]
-  return (
-    <aside className="supplier-sidebar">
-      <div className="supplier-logo">
-        <span className="supplier-logo__mark" aria-hidden="true">
-          <img src="/img/import/logo-color.png" alt="" />
-        </span>
-        <div>
-          <h2>Master Immo</h2>
-          <p>Espace Client</p>
-        </div>
-      </div>
-      <nav className="supplier-nav" aria-label="Menu client">
-        {links.map((l, i) => (
-          <Link key={i} className={`supplier-nav__item${pathname === l.to ? ' is-active' : ''}`} to={l.to}>
-            <i className={l.icon}></i><span>{l.label}</span>
-          </Link>
-        ))}
-      </nav>
-      <Link className="supplier-logout" to="/connexion"><i className="ti-power-off"></i><span>Déconnexion</span></Link>
-    </aside>
-  )
-}
+import { Link } from 'react-router-dom'
+import HeaderDashboard from '../components/HeaderDashboard'
+import SidebarDashboard from '../components/SidebarDashboard'
 
 export default function EspaceClientDashboard() {
   return (
     <div className="supplier-layout">
-      <ClientSidebar />
+      <SidebarDashboard />
       <section className="supplier-main">
-        <header className="supplier-topbar">
-          <div>
-            <p className="supplier-topbar__kicker">Portail client</p>
-            <h1 className="supplier-topbar__title">Tableau de bord</h1>
-          </div>
-          <div className="supplier-topbar__actions">
-            <button className="supplier-icon-btn" type="button" aria-label="Notifications">
-              <i className="ti-bell"></i>
-              <span className="supplier-icon-btn__badge">1</span>
-            </button>
-            <button className="supplier-icon-btn" type="button" aria-label="Paramètres">
-              <i className="ti-settings"></i>
-            </button>
-          </div>
-        </header>
+        <HeaderDashboard />
 
         <main className="supplier-content" aria-label="Contenu principal client">
           <section className="supplier-dashboard-top">
@@ -94,11 +48,11 @@ export default function EspaceClientDashboard() {
                 </li>
                 <li>
                   <span className="supplier-list-card__name">Terrain - Ambatobe</span>
-                  <span className="supplier-list-card__status supplier-list-card__status--ok">Titre délivré</span>
+                  <span className="supplier-list-card__status supplier-list-card__status--complete">Titre délivré</span>
                 </li>
                 <li>
                   <span className="supplier-list-card__name">Terrain - Andravoahangy</span>
-                  <span className="supplier-list-card__status supplier-list-card__status--pending">Dossier en cours</span>
+                  <span className="supplier-list-card__status supplier-list-card__status--payment">Dossier en cours</span>
                 </li>
               </ul>
             </aside>

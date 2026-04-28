@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import HeaderDashboard from '../components/HeaderDashboard'
 
 function FournisseurSidebar() {
   const { pathname } = useLocation()
@@ -38,21 +39,7 @@ export default function EspaceFournisseurDashboard() {
     <div className="supplier-layout">
       <FournisseurSidebar />
       <section className="supplier-main">
-        <header className="supplier-topbar">
-          <div>
-            <p className="supplier-topbar__kicker">Portail principal</p>
-            <h1 className="supplier-topbar__title">Tableau de bord fournisseur</h1>
-          </div>
-          <div className="supplier-topbar__actions">
-            <button className="supplier-icon-btn" type="button" aria-label="Notifications">
-              <i className="ti-bell"></i>
-              <span className="supplier-icon-btn__badge">1</span>
-            </button>
-            <button className="supplier-icon-btn" type="button" aria-label="Paramètres">
-              <i className="ti-settings"></i>
-            </button>
-          </div>
-        </header>
+        <HeaderDashboard showActions />
         <main className="supplier-content" aria-label="Contenu principal">
           <section className="supplier-dashboard-top">
             <section className="supplier-welcome">
