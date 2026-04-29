@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Art of Detail */}
+      {/* Leader de marché à Madagascar */}
       <div className="dummy-height"></div>
       <section className="art-of-detail-sec">
         <div className="art-anim-sec" style={{ backgroundImage: 'url(/img/import/image1.png)' }}>
@@ -357,6 +357,7 @@ export default function Home() {
       <section className="home-get-touch section-padding bg-white" style={{ position: 'relative', zIndex: 3, backgroundColor: '#fff' }}>
         <div className="container">
           <div className="row g-4 align-items-stretch">
+            {/* LISTE PRIVILEGIEE */}
             <div className="col-lg-7" data-aos="fade-right" data-aos-duration="900" data-aos-delay="80" data-aos-once="true">
               <div className="home-get-touch__left">
                 <h3 className="home-get-touch__title">Rejoignez-nous</h3>
@@ -382,6 +383,8 @@ export default function Home() {
                 </form>
               </div>
             </div>
+            
+            {/* NEWSLETTER */}
             <div className="col-lg-5" data-aos="fade-left" data-aos-duration="900" data-aos-delay="140" data-aos-once="true">
               <div className="home-get-touch__card home-get-touch__card--newsletter bg-img" data-background="/img/import/shake2.jpg">
                 <h3 className="home-get-touch__title">Our newsletter</h3>

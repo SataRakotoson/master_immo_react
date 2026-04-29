@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Preloader from './Preloader'
-import ScrollProgress from './ScrollProgress'
 import WhatsAppFloat from './WhatsAppFloat'
 import VisitPopup from './VisitPopup'
 import { usePageScripts } from '../hooks/usePageScripts'
@@ -22,7 +21,6 @@ export default function Layout() {
   return (
     <div className="fixed-header">
       <Preloader />
-      <ScrollProgress />
       <Header />
       <main>
         <Outlet />

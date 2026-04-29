@@ -16,10 +16,12 @@ import EspaceClientDashboard from './pages/EspaceClientDashboard'
 import MesTerrains from './pages/MesTerrains'
 import EspaceFournisseurDashboard from './pages/EspaceFournisseurDashboard'
 import DepotTerrain from './pages/DepotTerrain'
+import ScrollProgress from './components/ScrollProgress'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollProgress />
       <Routes>
         {/* Pages sans header/footer (auth) */}
         <Route path="/connexion" element={<Signin />} />
