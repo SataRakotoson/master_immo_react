@@ -3847,7 +3847,7 @@ button.mfp-arrow {
 
 /* Voile sombre semi-transparent au-dessus du fond image (témoignages) */
 section.testimonials .testimonials-bg-dark.bg-img[data-overlay-dark]::before {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     opacity: 1;
 }
 
@@ -6094,6 +6094,53 @@ section.services.section-padding {
 }
 
 /* Floating WhatsApp button */
+.visit-float {
+    position: fixed;
+    right: 30px;
+    bottom: 155px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: #aa8453;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    z-index: 1200;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.visit-float i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    font-size: 1.65rem;
+    line-height: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+.visit-float::before,
+.visit-float::after {
+    content: none !important;
+}
+.visit-float:hover,
+.visit-float:focus,
+.visit-float:active {
+    background: #936f44;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.26);
+}
+.visit-float:hover i,
+.visit-float:focus i,
+.visit-float:active i {
+    transform: translate(-50%, -50%);
+}
+
 .whatsapp-float {
     position: fixed;
     right: 30px;
@@ -6142,6 +6189,12 @@ section.services.section-padding {
     transform: translate(-50%, -50%);
 }
 @media (max-width: 767px) {
+    .visit-float {
+        right: 20px;
+        bottom: 130px;
+        width: 45px;
+        height: 45px;
+    }
     .whatsapp-float {
         right: 20px;
         bottom: 74px;

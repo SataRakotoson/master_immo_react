@@ -1,22 +1,10 @@
-import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-
-export default function VisitPopup() {
-  const [showPopup, setShowPopup] = useState(false)
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    setShowPopup(false)
-    const timer = setTimeout(() => setShowPopup(true), 760)
-    return () => clearTimeout(timer)
-  }, [pathname])
-
-  if (!showPopup) return null
+export default function VisitPopup({ isOpen, onClose }) {
+  if (!isOpen) return null
 
   return (
     <div className="lands-visit-popup" id="lands-visit-popup" role="dialog" aria-modal="true" aria-labelledby="lands-visit-popup-title">
       <div className="lands-visit-popup__panel">
-        <button className="lands-visit-popup__close" type="button" aria-label="Fermer la fenêtre" onClick={() => setShowPopup(false)}>
+        <button className="lands-visit-popup__close" type="button" aria-label="Fermer la fenêtre" onClick={onClose}>
           <span aria-hidden="true">&times;</span>
         </button>
         <div className="lands-visit-popup__media">

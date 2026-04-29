@@ -1,14 +1,16 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Preloader from './Preloader'
 import WhatsAppFloat from './WhatsAppFloat'
+import VisitFloat from './VisitFloat'
 import VisitPopup from './VisitPopup'
 import { usePageScripts } from '../hooks/usePageScripts'
 
 export default function Layout() {
   const { pathname } = useLocation()
+  const [isVisitPopupOpen, setIsVisitPopupOpen] = useState(false)
   usePageScripts()
 
   useEffect(() => {
@@ -25,7 +27,8 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <VisitPopup />
+      <VisitPopup isOpen={isVisitPopupOpen} onClose={() => setIsVisitPopupOpen(false)} />
+      <VisitFloat onClick={() => setIsVisitPopupOpen(true)} />
       <WhatsAppFloat />
       <Footer />
     </div>
